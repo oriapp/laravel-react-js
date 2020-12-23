@@ -2,13 +2,13 @@ import Axios from 'axios';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class Example extends React.Component {
+class Welcome extends React.Component {
     constructor() {
       super();
       this.state = {
         isLoggedIn: false,
         user: {},
-        something: 'ass',
+        something: 'Hai',
         data: {},
         errorMsg: '',
         time: 0
@@ -26,28 +26,25 @@ class Example extends React.Component {
 
     handleClick(e){
         this.setState({
-            something : this.state.something + 's'
+            something : this.state.something + 'i'
         });
         console.log(e)
     }
 
     render(){
-        const {something, errorMsg, data, time} = this.state;
+        const {something, time} = this.state;
         return(
             <div>
-
-            {/* <h1 style={{color: 'red'},{ backgroundColor: 'black'}} className="text-base text-gray-700 leading-normal" onClick={this.handleClick.bind(this)}>{something}</h1> */}
+            <h1 style={{color: 'red'},{ backgroundColor: 'black'}, {WebkitUserSelect: 'none'}, {userSelect: 'none'}} className="text-base text-gray-700 leading-normal" onClick={this.handleClick.bind(this)}>{something}</h1>
 
             <h2>{time}</h2>
-
-
             </div>
         )
     }
 }
 
-export default Example;
+export default Welcome;
 
-if (document.getElementById('example')) {
-    ReactDOM.render(<Example />, document.getElementById('example'));
+if (document.getElementById('welcome')) {
+    ReactDOM.render(<Welcome />, document.getElementById('welcome'));
 }

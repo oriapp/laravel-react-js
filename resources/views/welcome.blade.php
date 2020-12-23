@@ -82,10 +82,10 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Laravel & React
                 </div>
 
-                <div id="example"></div>
+                <div id="welcome"></div>
 
             </div>
         </div>

@@ -65787,20 +65787,10 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes React and other helpers. It's a great starting point while
- * building robust, powerful web applications using React + Laravel.
- */
+__webpack_require__(/*! ./components/Welcome.jsx */ "./resources/js/components/Welcome.jsx"); // unclude bootstrap
+
+
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
-/**
- * Next, we will create a fresh React component instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
-
-__webpack_require__(/*! ./components/Example.jsx */ "./resources/js/components/Example.jsx");
 
 /***/ }),
 
@@ -65849,9 +65839,9 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/js/components/Example.jsx":
+/***/ "./resources/js/components/Welcome.jsx":
 /*!*********************************************!*\
-  !*** ./resources/js/components/Example.jsx ***!
+  !*** ./resources/js/components/Welcome.jsx ***!
   \*********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -65890,21 +65880,21 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
-var Example = /*#__PURE__*/function (_React$Component) {
-  _inherits(Example, _React$Component);
+var Welcome = /*#__PURE__*/function (_React$Component) {
+  _inherits(Welcome, _React$Component);
 
-  var _super = _createSuper(Example);
+  var _super = _createSuper(Welcome);
 
-  function Example() {
+  function Welcome() {
     var _this;
 
-    _classCallCheck(this, Example);
+    _classCallCheck(this, Welcome);
 
     _this = _super.call(this);
     _this.state = {
       isLoggedIn: false,
       user: {},
-      something: 'ass',
+      something: 'Hai',
       data: {},
       errorMsg: '',
       time: 0
@@ -65912,7 +65902,7 @@ var Example = /*#__PURE__*/function (_React$Component) {
     return _this;
   }
 
-  _createClass(Example, [{
+  _createClass(Welcome, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       var _this2 = this;
@@ -65932,7 +65922,7 @@ var Example = /*#__PURE__*/function (_React$Component) {
     key: "handleClick",
     value: function handleClick(e) {
       this.setState({
-        something: this.state.something + 's'
+        something: this.state.something + 'i'
       });
       console.log(e);
     }
@@ -65941,20 +65931,30 @@ var Example = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this$state = this.state,
           something = _this$state.something,
-          errorMsg = _this$state.errorMsg,
-          data = _this$state.data,
           time = _this$state.time;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h2", null, time));
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", {
+        style: ({
+          color: 'red'
+        }, {
+          backgroundColor: 'black'
+        }, {
+          WebkitUserSelect: 'none'
+        }, {
+          userSelect: 'none'
+        }),
+        className: "text-base text-gray-700 leading-normal",
+        onClick: this.handleClick.bind(this)
+      }, something), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h2", null, time));
     }
   }]);
 
-  return Example;
+  return Welcome;
 }(react__WEBPACK_IMPORTED_MODULE_1___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (Example);
+/* harmony default export */ __webpack_exports__["default"] = (Welcome);
 
-if (document.getElementById('example')) {
-  react_dom__WEBPACK_IMPORTED_MODULE_2___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Example, null), document.getElementById('example'));
+if (document.getElementById('welcome')) {
+  react_dom__WEBPACK_IMPORTED_MODULE_2___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Welcome, null), document.getElementById('welcome'));
 }
 
 /***/ }),
