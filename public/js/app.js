@@ -65848,12 +65848,10 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -65879,7 +65877,6 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
-
 var Welcome = /*#__PURE__*/function (_React$Component) {
   _inherits(Welcome, _React$Component);
 
@@ -65895,14 +65892,21 @@ var Welcome = /*#__PURE__*/function (_React$Component) {
       isLoggedIn: false,
       user: {},
       something: 'Hai',
-      data: {},
+      data: 0,
       errorMsg: '',
-      time: 0
+      time: null
     };
     return _this;
   }
 
   _createClass(Welcome, [{
+    key: "componentWillMount",
+    value: function componentWillMount() {
+      this.setState({
+        time: new Date().toLocaleTimeString()
+      });
+    }
+  }, {
     key: "componentDidMount",
     value: function componentDidMount() {
       var _this2 = this;
@@ -65920,19 +65924,19 @@ var Welcome = /*#__PURE__*/function (_React$Component) {
     }
   }, {
     key: "handleClick",
-    value: function handleClick(e) {
+    value: function handleClick() {
       this.setState({
         something: this.state.something + 'i'
       });
-      console.log(e);
     }
   }, {
     key: "render",
     value: function render() {
       var _this$state = this.state,
           something = _this$state.something,
-          time = _this$state.time;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", {
+          time = _this$state.time,
+          data = _this$state.data;
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         style: ({
           color: 'red'
         }, {
@@ -65944,17 +65948,17 @@ var Welcome = /*#__PURE__*/function (_React$Component) {
         }),
         className: "text-base text-gray-700 leading-normal",
         onClick: this.handleClick.bind(this)
-      }, something), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h2", null, time));
+      }, something), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, time));
     }
   }]);
 
   return Welcome;
-}(react__WEBPACK_IMPORTED_MODULE_1___default.a.Component);
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (Welcome);
 
 if (document.getElementById('welcome')) {
-  react_dom__WEBPACK_IMPORTED_MODULE_2___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Welcome, null), document.getElementById('welcome'));
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Welcome, null), document.getElementById('welcome'));
 }
 
 /***/ }),

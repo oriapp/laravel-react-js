@@ -1,6 +1,6 @@
-import Axios from 'axios';
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 
 class Welcome extends React.Component {
     constructor() {
@@ -9,10 +9,15 @@ class Welcome extends React.Component {
         isLoggedIn: false,
         user: {},
         something: 'Hai',
-        data: {},
+        data: 0,
         errorMsg: '',
-        time: 0
+        time: null
       }
+    }
+    
+
+    componentWillMount(){
+        this.setState({time: new Date().toLocaleTimeString()})
     }
 
     componentDidMount(){
@@ -24,15 +29,12 @@ class Welcome extends React.Component {
     }
     
 
-    handleClick(e){
-        this.setState({
-            something : this.state.something + 'i'
-        });
-        console.log(e)
+    handleClick(){
+        this.setState({something : this.state.something + 'i'});
     }
 
     render(){
-        const {something, time} = this.state;
+        const {something, time, data} = this.state;
         return(
             <div>
             <h1 style={{color: 'red'},{ backgroundColor: 'black'}, {WebkitUserSelect: 'none'}, {userSelect: 'none'}} className="text-base text-gray-700 leading-normal" onClick={this.handleClick.bind(this)}>{something}</h1>
