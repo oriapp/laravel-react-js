@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Skeleton from 'react-loading-skeleton';
+import Toast from 'react-bootstrap/Toast';
 
 
 class Welcome extends React.Component {
@@ -14,33 +16,38 @@ class Welcome extends React.Component {
         time: null
       }
     }
-    
+
 
     componentWillMount(){
         this.setState({time: new Date().toLocaleTimeString()})
     }
 
     componentDidMount(){
-        this.interval = setInterval(()=>{this.setState({time: new Date().toLocaleTimeString()})}, 1000)
+        this.interval = setInterval(()=>{this.setState({time: new Date().toLocaleTimeString()})}, 1000);
     }
 
     componentWillUnmount(){
         clearInterval(this.interval)
     }
-    
 
     handleClick(){
-        this.setState({something : this.state.something + 'i'});
+        this.setState({ something : this.state.something + 'i', data: Math.round(Math.random() * 10) });
+        setTimeout( () => {this.setState({isLoggedIn: true})} , 150 )
     }
 
     render(){
-        const {something, time, data} = this.state;
+        const {something, time, data, isLoggedIn} = this.state;
         return(
-            <div>
+            <>
             <h1 style={{color: 'red'},{ backgroundColor: 'black'}, {WebkitUserSelect: 'none'}, {userSelect: 'none'}} className="text-base text-gray-700 leading-normal" onClick={this.handleClick.bind(this)}>{something}</h1>
 
-            <h2>{time}</h2>
-            </div>
+            <h2>The time is: <mark>{time || <Skeleton variant="text" />}</mark></h2>
+
+
+            {isLoggedIn ? data : <Skeleton />}
+
+
+            </>
         )
     }
 }
