@@ -41,10 +41,10 @@ class Welcome extends React.Component {
             <>
             <h1 style={{color: 'red'},{ backgroundColor: 'black'}, {WebkitUserSelect: 'none'}, {userSelect: 'none'}} className="text-base text-gray-700 leading-normal" onClick={this.handleClick.bind(this)}>{something}</h1>
 
-            <h2>The time is: <mark>{time || <Skeleton variant="text" />}</mark></h2>
+            <h2>The time is: <mark >{time || <Skeleton variant="text" />}</mark></h2>
 
 
-            {isLoggedIn ? data : <Skeleton />}
+            {isLoggedIn ? data : <Skeleton />} 
 
 
             </>
