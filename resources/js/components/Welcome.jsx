@@ -44,7 +44,7 @@ class Welcome extends React.Component {
             <h2>The time is: <mark >{time || <Skeleton variant="text" />}</mark></h2>
 
 
-            {isLoggedIn ? data : <Skeleton />}
+            {isLoggedIn ? data : <Skeleton />} 
 
 
             </>
