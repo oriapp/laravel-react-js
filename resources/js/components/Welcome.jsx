@@ -14,7 +14,8 @@ class Welcome extends React.Component {
         something: 'Hai',
         data: 0,
         errorMsg: '',
-        time: null
+        time: null,
+        x: ["ori", "apple"]
       }
     }
 
@@ -36,8 +37,8 @@ class Welcome extends React.Component {
         setTimeout( () => {this.setState({isLoggedIn: true})} , 150 )
     }
 
-    render(props){
-        const {something, time, data, isLoggedIn} = this.state;
+    render(){
+        const {something, time, data, isLoggedIn, x} = this.state;
         return(
             <>
             <h1 style={{color: 'red'},{ backgroundColor: 'black'}, {WebkitUserSelect: 'none'}, {userSelect: 'none'}} className="text-base text-gray-700 leading-normal" onClick={this.handleClick.bind(this)}>{something}</h1>
@@ -46,6 +47,12 @@ class Welcome extends React.Component {
 
 
             {isLoggedIn ? data : <Skeleton />}
+
+            {
+            x.map((r, l)=> {
+                {console.log(r, l , ` t:${time}`)}
+            })
+            }
 
 
             <div>

@@ -73774,7 +73774,8 @@ var Welcome = /*#__PURE__*/function (_React$Component) {
       something: 'Hai',
       data: 0,
       errorMsg: '',
-      time: null
+      time: null,
+      x: ["ori", "apple"]
     };
     return _this;
   }
@@ -73819,12 +73820,13 @@ var Welcome = /*#__PURE__*/function (_React$Component) {
     }
   }, {
     key: "render",
-    value: function render(props) {
+    value: function render() {
       var _this$state = this.state,
           something = _this$state.something,
           time = _this$state.time,
           data = _this$state.data,
-          isLoggedIn = _this$state.isLoggedIn;
+          isLoggedIn = _this$state.isLoggedIn,
+          x = _this$state.x;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         style: ({
           color: 'red'
@@ -73839,7 +73841,11 @@ var Welcome = /*#__PURE__*/function (_React$Component) {
         onClick: this.handleClick.bind(this)
       }, something), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "The time is: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("mark", null, time || /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_loading_skeleton__WEBPACK_IMPORTED_MODULE_2___default.a, {
         variant: "text"
-      })), " "), isLoggedIn ? data : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_loading_skeleton__WEBPACK_IMPORTED_MODULE_2___default.a, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_detect_offline__WEBPACK_IMPORTED_MODULE_3__["Online"], null, "Only shown when you're online"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_detect_offline__WEBPACK_IMPORTED_MODULE_3__["Offline"], null, "Only shown offline (surprise!)")));
+      })), " "), isLoggedIn ? data : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_loading_skeleton__WEBPACK_IMPORTED_MODULE_2___default.a, null), x.map(function (r, l) {
+        {
+          console.log(r, l, " t:".concat(time));
+        }
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_detect_offline__WEBPACK_IMPORTED_MODULE_3__["Online"], null, "Only shown when you're online"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_detect_offline__WEBPACK_IMPORTED_MODULE_3__["Offline"], null, "Only shown offline (surprise!)")));
     }
   }]);
 
