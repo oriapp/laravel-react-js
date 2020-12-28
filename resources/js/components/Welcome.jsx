@@ -6,7 +6,7 @@ import Toast from 'react-bootstrap/Toast';
 
 
 class Welcome extends React.Component {
-    constructor(props) {
+    constructor() {
       super();
       this.state = {
         isLoggedIn: false,
@@ -14,8 +14,7 @@ class Welcome extends React.Component {
         something: 'Hai',
         data: 0,
         errorMsg: '',
-        time: null,
-        rnd: props
+        time: null
       }
     }
 
@@ -37,8 +36,8 @@ class Welcome extends React.Component {
         setTimeout( () => {this.setState({isLoggedIn: true})} , 150 )
     }
 
-    render(){
-        const {something, time, data, isLoggedIn, props} = this.state;
+    render(props){
+        const {something, time, data, isLoggedIn} = this.state;
         return(
             <>
             <h1 style={{color: 'red'},{ backgroundColor: 'black'}, {WebkitUserSelect: 'none'}, {userSelect: 'none'}} className="text-base text-gray-700 leading-normal" onClick={this.handleClick.bind(this)}>{something}</h1>
@@ -47,8 +46,6 @@ class Welcome extends React.Component {
 
 
             {isLoggedIn ? data : <Skeleton />}
-
-            {props || 'ass'}
 
 
             <div>

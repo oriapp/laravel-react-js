@@ -73762,7 +73762,7 @@ var Welcome = /*#__PURE__*/function (_React$Component) {
 
   var _super = _createSuper(Welcome);
 
-  function Welcome(props) {
+  function Welcome() {
     var _this;
 
     _classCallCheck(this, Welcome);
@@ -73774,8 +73774,7 @@ var Welcome = /*#__PURE__*/function (_React$Component) {
       something: 'Hai',
       data: 0,
       errorMsg: '',
-      time: null,
-      rnd: props
+      time: null
     };
     return _this;
   }
@@ -73840,7 +73839,7 @@ var Welcome = /*#__PURE__*/function (_React$Component) {
         onClick: this.handleClick.bind(this)
       }, something), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "The time is: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("mark", null, time || /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_loading_skeleton__WEBPACK_IMPORTED_MODULE_2___default.a, {
         variant: "text"
-      })), " "), isLoggedIn ? data : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_loading_skeleton__WEBPACK_IMPORTED_MODULE_2___default.a, null), props || 'ass', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_detect_offline__WEBPACK_IMPORTED_MODULE_3__["Online"], null, "Only shown when you're online"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_detect_offline__WEBPACK_IMPORTED_MODULE_3__["Offline"], null, "Only shown offline (surprise!)")));
+      })), " "), isLoggedIn ? data : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_loading_skeleton__WEBPACK_IMPORTED_MODULE_2___default.a, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_detect_offline__WEBPACK_IMPORTED_MODULE_3__["Online"], null, "Only shown when you're online"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_detect_offline__WEBPACK_IMPORTED_MODULE_3__["Offline"], null, "Only shown offline (surprise!)")));
     }
   }]);
 
