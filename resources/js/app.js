@@ -3,5 +3,3 @@ require('./components/nav.jsx');
 
 // unclude bootstrap
 require('./bootstrap');
-
-
