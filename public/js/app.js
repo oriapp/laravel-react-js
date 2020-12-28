@@ -73775,7 +73775,9 @@ var Welcome = /*#__PURE__*/function (_React$Component) {
       data: 0,
       errorMsg: '',
       time: null,
-      x: ["ori", "apple"]
+      x: [{
+        app: [2, 1]
+      }, "ori", "apple"]
     };
     return _this;
   }
@@ -73797,6 +73799,7 @@ var Welcome = /*#__PURE__*/function (_React$Component) {
           time: new Date().toLocaleTimeString()
         });
       }, 1000);
+      localStorage.setItem('state', this.state.something);
     }
   }, {
     key: "componentWillUnmount",
@@ -73841,10 +73844,11 @@ var Welcome = /*#__PURE__*/function (_React$Component) {
         onClick: this.handleClick.bind(this)
       }, something), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "The time is: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("mark", null, time || /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_loading_skeleton__WEBPACK_IMPORTED_MODULE_2___default.a, {
         variant: "text"
-      })), " "), isLoggedIn ? data : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_loading_skeleton__WEBPACK_IMPORTED_MODULE_2___default.a, null), x.map(function (r, l) {
-        {
-          console.log(r, l, " t:".concat(time));
-        }
+      })), " "), isLoggedIn ? data : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_loading_skeleton__WEBPACK_IMPORTED_MODULE_2___default.a, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), localStorage.getItem('state') || /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_loading_skeleton__WEBPACK_IMPORTED_MODULE_2___default.a, null), x.map(function (r, l) {
+        // {console.log(r, l , ` t:${time}`)}
+
+        /*#__PURE__*/
+        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, (r, l), " x");
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_detect_offline__WEBPACK_IMPORTED_MODULE_3__["Online"], null, "Only shown when you're online"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_detect_offline__WEBPACK_IMPORTED_MODULE_3__["Offline"], null, "Only shown offline (surprise!)")));
     }
   }]);

@@ -15,17 +15,17 @@ class Welcome extends React.Component {
         data: 0,
         errorMsg: '',
         time: null,
-        x: ["ori", "apple"]
+        x: [{app: [2, 1]}, "ori", "apple"]
       }
     }
 
-
     componentWillMount(){
-        this.setState({time: new Date().toLocaleTimeString()})
+        this.setState({time: new Date().toLocaleTimeString()});
     }
 
     componentDidMount(){
         this.interval = setInterval(()=>{this.setState({time: new Date().toLocaleTimeString()})}, 1000);
+        localStorage.setItem('state', this.state.something);
     }
 
     componentWillUnmount(){
@@ -34,7 +34,7 @@ class Welcome extends React.Component {
 
     handleClick(){
         this.setState({ something : this.state.something + 'i', data: Math.round(Math.random() * 10) });
-        setTimeout( () => {this.setState({isLoggedIn: true})} , 150 )
+        setTimeout( () => {this.setState({isLoggedIn: true})} , 150 );
     }
 
     render(){
@@ -48,9 +48,12 @@ class Welcome extends React.Component {
 
             {isLoggedIn ? data : <Skeleton />}
 
+            <br />{localStorage.getItem('state') || <Skeleton />}
+
             {
             x.map((r, l)=> {
-                {console.log(r, l , ` t:${time}`)}
+                // {console.log(r, l , ` t:${time}`)}
+                <h1>{r , l} x</h1>
             })
             }
 
