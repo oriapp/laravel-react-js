@@ -5,6 +5,8 @@ import { Offline, Online } from "react-detect-offline";
 import Toast from 'react-bootstrap/Toast';
 
 
+
+
 class Welcome extends React.Component {
     constructor() {
       super();
@@ -40,7 +42,7 @@ class Welcome extends React.Component {
     render(){
         const {something, time, data, isLoggedIn, x} = this.state;
         return(
-            <>
+            <React.Fragment>
             <h1 style={{color: 'red'},{ backgroundColor: 'black'}, {WebkitUserSelect: 'none'}, {userSelect: 'none'}} className="text-base text-gray-700 leading-normal" onClick={this.handleClick.bind(this)}>{something}</h1>
 
             <h2>The time is: <mark >{time || <Skeleton variant="text" />}</mark> </h2>
@@ -64,7 +66,7 @@ class Welcome extends React.Component {
   </div>
 
 
-            </>
+            </React.Fragment>
         )
     }
 }
