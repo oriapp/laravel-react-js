@@ -99,7 +99,7 @@
                     instructions how to enable JavaScript in your web browser</a>.
                    </noscript>
                    
-                <div id="welcome"></div>
+                <div name="React.Fragment" id="welcome"></div>
 
             </div>
         </div>
